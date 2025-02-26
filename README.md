@@ -57,13 +57,13 @@ JSON Schema for the API to import in Postman:
 ```json
 {
   "info": {
-    "_postman_id": "d9d8a5b2-3c14-4c2e-9f6a-123456789abc",
-    "name": "Transactions API",
+    "_postman_id": "f9a0c2d4-3e4b-4e6f-9c1d-123456789abc",
+    "name": "API de Transações",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
     {
-      "name": "Bulk Insert Transactions",
+      "name": "Inserir Transações em Massa",
       "request": {
         "method": "POST",
         "header": [
@@ -74,7 +74,7 @@ JSON Schema for the API to import in Postman:
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"transactions\": [\n    {\n      \"user\": { \"id\": \"user1\", \"name\": \"John Doe\" },\n      \"type\": \"purchase\",\n      \"amount\": 100,\n      \"currency\": \"USD\",\n      \"status\": \"pending\"\n    },\n    {\n      \"user\": { \"id\": \"user2\", \"name\": \"Jane Smith\" },\n      \"type\": \"withdrawal\",\n      \"amount\": 50,\n      \"currency\": \"USD\",\n      \"status\": \"pending\"\n    }\n  ]\n}"
+          "raw": "{\n  \"transactions\": [\n    {\n      \"user\": { \"id\": \"123e4567-e89b-12d3-a456-426614174000\", \"name\": \"Vandré Schaedler\" },\n      \"type\": \"purchase\",\n      \"amount\": 100,\n      \"currency\": \"BRL\",\n      \"status\": \"pending\"\n    },\n    {\n      \"user\": { \"id\": \"123e4567-e89b-12d3-a456-426614174001\", \"name\": \"Karina Maluf\" },\n      \"type\": \"withdrawal\",\n      \"amount\": 50,\n      \"currency\": \"BRL\",\n      \"status\": \"pending\"\n    }\n  ]\n}"
         },
         "url": {
           "raw": "http://localhost:3000/transactions/bulk-insert",
@@ -92,7 +92,7 @@ JSON Schema for the API to import in Postman:
       "response": []
     },
     {
-      "name": "Bulk Update Transaction Status",
+      "name": "Atualizar Status em Massa das Transações",
       "request": {
         "method": "PATCH",
         "header": [
@@ -103,7 +103,7 @@ JSON Schema for the API to import in Postman:
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"transactionIds\": [\"<transactionId1>\", \"<transactionId2>\"]\n}"
+          "raw": "{\n  \"transactionIds\": [\n    \"123e4567-e89b-12d3-a456-426614174002\",\n    \"123e4567-e89b-12d3-a456-426614174003\"\n  ]\n}"
         },
         "url": {
           "raw": "http://localhost:3000/transactions/update-status",
@@ -121,7 +121,7 @@ JSON Schema for the API to import in Postman:
       "response": []
     },
     {
-      "name": "List Transactions with Pagination",
+      "name": "Listar Transações com Paginação",
       "request": {
         "method": "GET",
         "header": [],
@@ -151,6 +151,7 @@ JSON Schema for the API to import in Postman:
     }
   ]
 }
+
 
 ```
 
